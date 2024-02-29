@@ -58,10 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => InteresSimple()),
-                );
+                MenuBottom(context);
               },
               child: Text('Interes Simple'),
             ),

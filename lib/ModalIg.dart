@@ -3,110 +3,101 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 import 'package:flutter/material.dart';
+import 'package:pro0030/ModalCapital.dart';
+import 'package:pro0030/ModalInteres.dart';
+import 'package:pro0030/ModalMonto.dart';
+import 'package:pro0030/ModalTasaInteres.dart';
+import 'package:pro0030/ModalTiempo.dart';
 
-class InteresSimple extends StatefulWidget {
-  @override
-  _InteresSimpleState createState() => _InteresSimpleState();
-}
-
-class _InteresSimpleState extends State<InteresSimple> {
-  double capital = 0.0;
-  double tasainteres = 0.0;
-  int tiempo = 0;
-  double interes = 0.0;
-
-  @override
-  Widget build(BuildContext context) {
-    var child;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Interes Simple'),
-      ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Ingrese el capital',
-                  ),
-                  keyboardType: TextInputType.number,
-                  onChanged: (value) {
-                    setState(() {
-                      capital = double.parse(value);
-                    });
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Ingrese la tasa de interes',
-                  ),
-                  keyboardType: TextInputType.number,
-                  onChanged: (value) {
-                    setState(() {
-                      tasainteres = double.parse(value);
-                    });
-                  },
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Ingrese el tiempo(años)',
-                  ),
-                  keyboardType: TextInputType.number,
-                  onChanged: (value) {
-                    setState(() {
-                      tiempo = int.parse(value);
-                    });
-                  },
-                ),
-              ),
-
-              ElevatedButton(
+void MenuBottom(BuildContext context) {
+  showModalBottomSheet(
+    isScrollControlled: true,
+    context: context,
+    builder: (BuildContext context) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          AppBar(
+            title: Text("Regresar"),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                    interes = (capital * tasainteres * tiempo) / 100;
-                  });
-                  showModalBottomSheet(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return Container(
-                        // Contenido del BottomSheet
-                        child: Padding(
-                          padding: EdgeInsets.all(40.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              Text('Interes simple: $interes'),
-
-                              // Agrega aquí los widgets que desees mostrar en el BottomSheet
-                            ],
-                          ),
-                        ),
-                      );
-                    },
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CalcularMonto()),
                   );
                 },
-                child: Text('Calcular'),
+                child: Text("Monto"),
               ),
-
-              // Agrega aquí los widgets que desees mostrar en el BottomSheet
-            ],
+            ),
           ),
-        ),
-      ),
-    );
-  }
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CalcularInteres()),
+                  );
+                },
+                child: Text("Interes"),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CalcularCapital()),
+                  );
+                },
+                child: Text("capital"),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CalcularTasaInteres()),
+                  );
+                },
+                child: Text("tasa de interes"),
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CalcularTiempo()),
+                  );
+                },
+                child: Text("tiempo"),
+              ),
+            ),
+          ),
+        ],
+      );
+    },
+  );
 }
