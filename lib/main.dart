@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pro0030/ModalAnual.dart';
+import 'package:pro0030/ModalIc.dart';
+
 import 'package:pro0030/ModalIg.dart';
 
 void main() {
@@ -51,16 +54,43 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("INGENIERIA ECONOMICA"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                MenuBottom(context);
-              },
-              child: Text('Interes Simple'),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  MenuBottom(context);
+                },
+                child: Text('Interes Simple'),
+              ),
+            ),
+            SizedBox(height: 20),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InterestCalculatorPage()),
+                  );
+                },
+                child: Text('Interes Compuesto'),
+              ),
+            ),
+            SizedBox(height: 20),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Anualidades()),
+                  );
+                },
+                child: Text('Anualidades'),
+              ),
             ),
           ],
         ),

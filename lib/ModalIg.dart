@@ -24,14 +24,16 @@ void MenuBottom(BuildContext context) {
             padding: EdgeInsets.all(8.0),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CalcularMonto()),
-                  );
-                },
-                child: Text("Monto"),
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CalcularMonto()),
+                    );
+                  },
+                  child: Text("Monto"),
+                ),
               ),
             ),
           ),
@@ -39,14 +41,17 @@ void MenuBottom(BuildContext context) {
             padding: EdgeInsets.all(8.0),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CalcularInteres()),
-                  );
-                },
-                child: Text("Interes"),
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CalcularInteres()),
+                    );
+                  },
+                  child: Text("Interes"),
+                ),
               ),
             ),
           ),
@@ -54,14 +59,17 @@ void MenuBottom(BuildContext context) {
             padding: EdgeInsets.all(8.0),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CalcularCapital()),
-                  );
-                },
-                child: Text("capital"),
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CalcularCapital()),
+                    );
+                  },
+                  child: Text("capital"),
+                ),
               ),
             ),
           ),
@@ -69,15 +77,17 @@ void MenuBottom(BuildContext context) {
             padding: EdgeInsets.all(8.0),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => CalcularTasaInteres()),
-                  );
-                },
-                child: Text("tasa de interes"),
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CalcularTasaInteres()),
+                    );
+                  },
+                  child: Text("tasa de interes"),
+                ),
               ),
             ),
           ),
@@ -85,14 +95,16 @@ void MenuBottom(BuildContext context) {
             padding: EdgeInsets.all(8.0),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CalcularTiempo()),
-                  );
-                },
-                child: Text("tiempo"),
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CalcularTiempo()),
+                    );
+                  },
+                  child: Text("tiempo"),
+                ),
               ),
             ),
           ),
